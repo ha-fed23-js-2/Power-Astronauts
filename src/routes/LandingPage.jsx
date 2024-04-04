@@ -1,5 +1,5 @@
 import menuItems from "../data/menuItems";
-
+import "./LandingPage.css";
 
 const LandingPage = () => {
     return (
