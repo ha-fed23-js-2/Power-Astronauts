@@ -1,5 +1,6 @@
 import menuItems from "../data/menuItems";
 import LandingPageCard from "../components/LandingPageCard";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   // const LandingPageCard = (props) => (
