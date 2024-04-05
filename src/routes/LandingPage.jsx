@@ -15,9 +15,9 @@ const LandingPage = () => {
     return (
         <>
       
-	<div className="picBox">
+	
 		<img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
-	</div>
+	
         
 
         <div className="menu-frame">

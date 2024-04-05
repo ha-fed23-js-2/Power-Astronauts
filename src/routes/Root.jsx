@@ -9,11 +9,11 @@ const Root = () => (
 		<header>
 		
 			<nav className="buttons">
-				<span><NavLink to= "/" > LandingPage </NavLink>
+				<a><NavLink to= "/" > LandingPage </NavLink>
 				<NavLink to="/OrderPage"> Orderpage </NavLink>
 				<NavLink to="/ConfirmPage"> ConfirmPage </NavLink>
                 <NavLink to="/LoginPage"> Log in </NavLink>
-                <NavLink to="/EditPage"> EditPage </NavLink></span>
+                <NavLink to="/EditPage"> EditPage </NavLink></a>
 			</nav>
 			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
 		</header>
