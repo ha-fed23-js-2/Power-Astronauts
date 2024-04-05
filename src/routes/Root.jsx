@@ -21,6 +21,10 @@ const Root = () => (
 		<main>
 			<Outlet />
 		</main>
+
+		<footer>
+			innehåll
+		</footer>
 	</div>
 )
 
