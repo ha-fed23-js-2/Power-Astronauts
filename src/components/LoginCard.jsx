@@ -19,9 +19,26 @@ const LoginCard = () => {
 
 
     return( <div>
-        <input type="text" onChange={(event) => setPassword(event.target.value)} required></input>
-        <button onClick={checkPassword}></button>
-        <p>{errorMessage}</p>
+            <div className='container'>
+      <div className="header">
+        <div className="text">Sign Up</div>
+        <div className="underline"></div>
+      </div>
+      <div className="inputs">
+        <div className="input">
+          <img src="" alt="" />
+          <input type="text" placeholder="Name" onChange={(event) => setPassword(event.target.value)} required/>
+        </div>
+        <div className="input">
+          <img src="" alt="" />
+          <input type="Password" placeholder="Password"/>
+          <p>{errorMessage}</p>
+        </div>
+      </div>
+      <div className="submit-container">
+        <button className="submit" onClick={checkPassword}>Log In</button>
+      </div>
+    </div>
     </div>
     )
 }
