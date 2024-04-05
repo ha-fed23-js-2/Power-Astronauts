@@ -18,27 +18,25 @@ const LoginCard = () => {
     }
 
 
-    return( <div>
-            <div className='container'>
-      <div className="header">
-        <div className="text">Sign Up</div>
-        <div className="underline"></div>
-      </div>
-      <div className="inputs">
-        <div className="input">
-          <img src="" alt="" />
-          <input type="text" placeholder="Name" onChange={(event) => setPassword(event.target.value)} required/>
+    return (<div>
+        <div className='container'>
+            <div className="header">
+                <div className="text">Sign Up</div>
+                <div className="underline"></div>
+            </div>
+            <div className="input-frame">
+                <div className="input">
+                    <input type="text" placeholder="Name" required />
+                </div>
+                <div className="input">
+                    <input type="Password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+                </div>
+                <p>{errorMessage}</p>
+            </div>
+            <div className="submit-container">
+                <button className="submit" onClick={checkPassword}>Log In</button>
+            </div>
         </div>
-        <div className="input">
-          <img src="" alt="" />
-          <input type="Password" placeholder="Password"/>
-          <p>{errorMessage}</p>
-        </div>
-      </div>
-      <div className="submit-container">
-        <button className="submit" onClick={checkPassword}>Log In</button>
-      </div>
-    </div>
     </div>
     )
 }
