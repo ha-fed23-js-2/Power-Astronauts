@@ -1,3 +1,26 @@
+body{
+	background-color: #343232;
+	width: 100vw;
+	margin: 0;
+}
+
+header{
+	background-color: #343232;
+	display: flex;
+	flex-direction: column;
+	height: 20vh;
+	justify-content: center;
+	align-items: center;
+	
+
+}
+
+.buttons a{
+	font-size: large;
+	color:aqua;
+}
+
+
 h1{
     text-align: center;
 }
@@ -27,6 +50,3 @@ h1{
     color: white;
 }
 
-img{
-    max-width: 300px;
-}
