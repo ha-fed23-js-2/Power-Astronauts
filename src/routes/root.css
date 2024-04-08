@@ -12,9 +12,10 @@ header{
 	height: 35vh;
 	justify-content: center;
 	align-items: center;
-	
-	
+}
 
+.header-options{
+	color: white;
 }
 
 .loggaHeader {

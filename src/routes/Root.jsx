@@ -15,7 +15,9 @@ const Root = () => (
 				<NavLink to="/ConfirmPage"> ConfirmPage </NavLink>
                 <NavLink to="/EditPage"> EditPage </NavLink></a>
 			</nav>
+			<h1 className="header-options">Meny</h1>
 			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
+			<h1 className="header-options">Beställ</h1>
 		</header>
 
 		<main>
