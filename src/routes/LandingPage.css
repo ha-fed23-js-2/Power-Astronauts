@@ -1,8 +1,46 @@
-img{
+/* img{
     max-width: 250px;
     max-height: 250px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s;
+} */
+
+
+
+.frontPic{
+	width: 100vw;
+	max-height: 50vh;
+	object-fit: cover;
+
+}
+
+h1{
+    text-align: center;
+}
+
+.menu-frame{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.landing-card{
+    background-color: rgb(120, 49, 23);
+    padding: 2em;
+    width: 30vw;
+    margin-top: 3em;
+    margin-left: 1em;
+    border-radius: 5em;
+}
+
+.landing-card > h2{
+    color: white;
+}
+
+.landing-card > p{
+    color: white;
 }

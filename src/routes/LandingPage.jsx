@@ -1,6 +1,8 @@
 import menuItems from "../data/menuItems";
 import LandingPageCard from "../components/LandingPageCard";
 import "./LandingPage.css";
+import LandingImg from "../assets/LandingImg.png"
+import Logga from "../assets/Logga.svg"
 
 const LandingPage = () => {
   // const LandingPageCard = (props) => (
@@ -12,10 +14,12 @@ const LandingPage = () => {
   //   )
     return (
         <>
-        <div className="header">
-        </div>
-        <h1>Landing Page</h1>
+      
+	
+		<img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
+	
         
+
         <div className="menu-frame">
       {menuItems.map((item, i) => (
         <LandingPageCard item={item} key={item.name} />
