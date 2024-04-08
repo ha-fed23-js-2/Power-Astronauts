@@ -16,12 +16,24 @@ header{
 
 .header-options{
 	color: white;
+	font-size: 25px;
 }
 
 .loggaHeader {
-    width: 400px; 
+    width: 200px; 
     height: auto;
    
+}
+
+.loggaHeaderLower{
+	width: 200px;
+	height: auto;
+}
+
+.header-row{
+	display: flex;
+	justify-content: space-between;
+	width: 80vw;
 }
 
 .buttons a{
@@ -33,9 +45,40 @@ header{
 footer{
 	display: flex;
 	justify-content: space-between;
-	height: 10vh;
+	height: 20vh;
 	width: 100vw;
 	background-color: #924128;
 
 }
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin: 1rem;
+	text-align: center;
+}
+.info h3{
+	margin: 0.5rem;
+}
 
+.info > p{
+	margin: 0;
+}
+
+
+.login-btn{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+	color: white;
+	padding: 1rem;
+	width: 5rem;
+}
+
+.login-btn a{
+	color: white;
+}

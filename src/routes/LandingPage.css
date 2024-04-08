@@ -7,6 +7,11 @@
     transition: transform 0.5s;
 } */
 
+/* Importera Google Font i din CSS-fil */
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+
+
 .outer-container{
 	background-image: url('../assets/moln.png');
 	z-index: 1;
@@ -49,8 +54,8 @@ h1{
 }
 
 .landing-card{
+    padding: 1rem;
     flex-basis: 35%;
-	margin-left: 4px;
     border-radius: 1em;
 	text-align: center;
 }
@@ -62,10 +67,12 @@ h1{
     align-items: center;
     color: white;
     font-family: 'Dancing Script', Handwriting;
+    margin: 0;
 }
 
 .landing-card > p{
     color: white;
-	font-size: 22px;
-    font-family: 'Dancing Script', Handwriting;
+	font-size: 18px;
+    font-family: 'Alice';
+    margin: 0.5em;
 }

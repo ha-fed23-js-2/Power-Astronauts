@@ -15,9 +15,13 @@ const Root = () => (
 				<NavLink to="/ConfirmPage"> ConfirmPage </NavLink>
                 <NavLink to="/EditPage"> EditPage </NavLink></a>
 			</nav>
-			<h1 className="header-options">Meny</h1>
+			
 			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
+			<div className="header-row">
 			<h1 className="header-options">Beställ</h1>
+			<h1 className="header-options">Meny</h1>
+			</div>
+			
 		</header>
 
 		<main>
@@ -25,26 +29,31 @@ const Root = () => (
 		</main>
 
 		<footer>
-			<div>
-			<h2>Adress</h2>
+			<div className="info">
+			<h3>Adress</h3>
 			<p>Gustaf Adolfs Torg 3,
 				411 10 Göteborg
 				Sverige</p>
 			</div>
 			
-			<div>
-			<h2>Öppentider</h2>
-			<p>Måndag - Fredag: 17:00 - 21:00
-				Lördag - Söndag: 12:00 - 21:00 </p>
-				</div>
+			<div className="info">
+				<h3>Öppentider</h3>
+				<p>Måndag - Fredag: 17:00 - 21:00</p>
+				<p>Lördag - Söndag: 12:00 - 21:00</p>
+			</div>
 
-				<div>
-			<h2>Kontakta oss</h2>
+				<div className="info">
+			<h3>Kontakta oss</h3>
 			<p>Telefon: 031-13 83 83
 				Email:info@kalssons.se </p>
 				</div>
+				<div className="login-btn">
+				<a><NavLink to="/LoginPage"> Log in </NavLink>
+					</a>
 
-				<NavLink to="/LoginPage"> Log in </NavLink>
+				</div>
+
+				
 		</footer>
 	</div>
 )
