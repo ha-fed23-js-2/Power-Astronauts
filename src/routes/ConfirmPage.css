@@ -1,4 +1,5 @@
-.order-page-body{
+.confirm-page-body{
+    display: flex;
     height: 100vh;
     background-color: #222222;
 }
@@ -39,8 +40,6 @@
 .order-product-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: #924128;
     padding: 1rem;
 }
@@ -187,48 +186,3 @@
     cursor: not-allowed;
   }
   
-  @media (max-width: 968px) {
-    
-    .order-page-container {
-        flex-direction: column;
-    }
-    .order-article, .order-aside {
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-   
-    .order-image {
-        width: 120px;
-        height: 120px;
-   
-    }
-
-    h2{
-        font-size: 15px;
-        
-    }
-    p{
-        font-size: 12px;
-    }
-
-
-    .add-to-cart { 
-        padding: 5px 10px;
-        margin: 0.4em;
-        margin-right: 0.5em;
-    }
-
-    .show-more{
-        padding: 5px 10px;
-        font-size: x-small;
-    }
-
-    .product-container  {
-       height: 120px;
-       
-    }
-
-    
-}

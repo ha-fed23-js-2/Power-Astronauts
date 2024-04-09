@@ -7,12 +7,21 @@
     transition: transform 0.5s;
 } */
 
+/* Importera Google Font i din CSS-fil */
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
+
+
+.outer-container{
+	background-image: url('../assets/moln.png');
+	z-index: 1;
+}
 
 .frontPic{
 	width: 100vw;
 	max-height: 50vh;
 	object-fit: cover;
+	flex-wrap: wrap;
 
 }
 
@@ -20,27 +29,50 @@ h1{
     text-align: center;
 }
 
-.menu-frame{
-    display: flex;
-    align-content: center;
+.outer-container{
+	/* background-color: #924128; */
+	margin-top: 20vh;
+	/* background: linear-gradient(#853906, #924128); */
+	display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 90vw;
+	align-items: center;
+	min-height: 80vh;
+}
+
+.menu-frame{
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: 5vh;
+    
+	background-color: #924128 ;
+    display: flex;
+    flex-wrap: wrap;
+	min-height: 40vh;
 }
 
 .landing-card{
-    background-color: rgb(120, 49, 23);
-    padding: 2em;
-    width: 30vw;
-    margin-top: 3em;
-    margin-left: 1em;
-    border-radius: 5em;
+    padding: 1rem;
+    flex-basis: 35%;
+    border-radius: 1em;
+	text-align: center;
 }
 
 .landing-card > h2{
+    display: flex;
+	font-size: 30px;
+    justify-content: center;
+    align-items: center;
     color: white;
+    font-family: 'Dancing Script', Handwriting;
+    margin: 0;
 }
 
 .landing-card > p{
     color: white;
+	font-size: 18px;
+    font-family: 'Alice';
+    margin: 0.5em;
 }
