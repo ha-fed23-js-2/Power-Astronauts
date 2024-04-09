@@ -5,16 +5,14 @@ import EditCard from "../components/EditCard";
 
 
 const EditPage = (props) => {
-    const handleDeleteItem = (deletedItem) => {
-    
-  }
+
 
       return (
           <>
           <div>
-              <h1>Order Page</h1>
+              <h1>Edit Page</h1>
         {menuItems.map((item, index) => (
-          <EditCard item={item} key={item.name} onDelete={handleDeleteItem}/>
+          <EditCard item={item} key={item.name} />
         ))}
         </div>
         </>
