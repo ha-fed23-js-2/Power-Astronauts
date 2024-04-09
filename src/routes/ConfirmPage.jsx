@@ -18,7 +18,13 @@ const ConfirmPage = () => {
                     <input type="text" placeholder="Name" required />
                 </div>
                 <div className="input">
-                    <input type="Password" placeholder="Password"/>
+                    <input type="Number" placeholder="Number"/>
+                </div>
+                <div className="input">
+                    <input type="Adress" placeholder="Adress" required />
+                </div>
+                <div className="input">
+                    <input type="Beskriving" placeholder="Beskrivning" required />
                 </div>
                 
             </div>
@@ -33,7 +39,7 @@ const ConfirmPage = () => {
 
         </aside>
               <article className="order-article">
-                  <div className="shopping-cart">
+                  <div className="confirm-shopping-cart">
                 
                   {menuItems.map((item, index) => (
               <div className="product-container" key={index}>
