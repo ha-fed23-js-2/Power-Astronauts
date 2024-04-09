@@ -1,0 +1,44 @@
+body {
+	background-color: #8CB7D4;
+}
+
+.order-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #222222;
+	color: #F0EBD4;
+}
+
+.text-column{
+	display: flex;
+	flex-direction: column;	
+}
+
+.edit-btn img, .delete-btn img {
+	cursor: pointer;
+	box-shadow: 0 0 0;
+}
+
+.edit-btn, .delete-btn {
+	border: none;
+	background: none;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.food-image {
+	margin-right: 20px;
+}
+
+.action-btns {
+	display: flex;
+    align-items: flex-end;
+}
+
+.beskrivning {
+	max-width: 30vw;
+}
+
+
