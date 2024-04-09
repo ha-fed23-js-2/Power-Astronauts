@@ -1,5 +1,5 @@
 .order-page-body{
-    height: 100vh;
+    height: auto;
     background-color: #222222;
 }
 .order-page-container{
@@ -21,9 +21,6 @@
     padding: 1em;
     border-radius: 10px;
     margin: 1em;
-    position: fixed; 
-    right: 0; 
-    top: 5rem; 
     width: 40%; 
     height: 100vh; 
     overflow-y: auto;
@@ -31,6 +28,7 @@
 .shopping-cart{
     background-color: #924128;
     height: 75vh; 
+    position: sticky; 
     border-radius: 10px;
     padding: 1em;
     margin: 1em;
@@ -189,15 +187,7 @@
   
   @media (max-width: 968px) {
     
-    .order-page-container {
-        flex-direction: column;
-    }
-    .order-article, .order-aside {
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
+    
    
     .order-image {
         width: 120px;
@@ -231,4 +221,19 @@
     }
 
     
+}
+
+@media (max-width: 668px) {
+    
+    .order-page-container {
+        flex-direction: column;
+    }
+
+    .order-article, .order-aside {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
 }
