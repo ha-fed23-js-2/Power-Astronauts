@@ -40,10 +40,9 @@ const Root = () => {
 			
 			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
 			<div className="header-row">
-			<h1 className="header-options">Beställ</h1>
-			<h1 className="header-options">Meny</h1>
-			</div>
-			
+                <NavLink to="/OrderPage" className="header-options">Beställ</NavLink>
+				<NavLink to="/" className="header-options">Meny</NavLink>
+            </div>
 		</header>
 
 		<main>
