@@ -35,8 +35,8 @@ export default function EditCard({ item }) {
             <input className="edit-name" defaultValue={item.name} onChange={(e) => setName(e.target.value)}></input>
             <input className="edit-description" defaultValue={item.description} onChange={(e) => setDescription(e.target.value)}></input>
             <input className="edit-price" defaultValue={item.price} onChange={(e) => setPrice(e.target.value)}></input>
-            <div className="button-div"><button className="cancel-btn" onClick={toggleEdit}></button>
-            <button className="save-button" onClick={handleEditItem}></button>
+            <div className="button-div"><button className="cancel-btn" onClick={toggleEdit}>Tillbaka</button>
+            <button className="save-button" onClick={handleEditItem}>Spara</button>
             </div>
             </div>
         </div> :
