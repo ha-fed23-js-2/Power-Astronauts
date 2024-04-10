@@ -5,11 +5,13 @@
 .order-page-container{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
     background-color: #222222;
     
 }
 .order-aside{
+    display: flex;
     color: white;
     padding: 1em;
     border-radius: 10px;
@@ -241,11 +243,45 @@
     
    
     .order-image {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
    
     }
 
+    
+    .product-container  {
+       height: 140px;
+       
+    }
+    .order-aside {
+        position: relative;
+        width: 90%;
+        margin: 0rem;
+        padding: 1rem;
+    }
+
+    .order-article{
+        position: relative;
+        width: 50%;
+        margin: 0rem;
+        padding: 1rem;
+    }
+
+    
+
+    .order-aside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    
+}
+
+@media (max-width: 668px) {
+    
+   
     h2{
         font-size: 15px;
         
@@ -266,32 +302,24 @@
         font-size: x-small;
     }
 
-    .product-container  {
-       height: 120px;
+    .order-article{
        
-    }
-    .order-aside, .order-article{
-        position: relative;
         width: 90%;
-        margin: 0rem;
-        padding: 1rem;
-    }
-    .shopping-cart {
-        max-width: 100%;
-    }
-
-    .order-aside{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         
     }
 
-    
-}
+    .order-aside, .order-article{
+        padding: 0;
+        
+    }
 
-@media (max-width: 668px) {
-    
+    .order-product-card {
+        padding: 0.5rem;
+    }
+
+    .order-title{
+        font-size: 1.5rem;
+    }
    
 
    

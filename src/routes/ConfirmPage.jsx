@@ -21,14 +21,16 @@ const ConfirmPage = () => {
                             <input type="text" placeholder="Namn" required />
                         </div>
                         <div class="confirm-info">
-                            <input type="email" placeholder="Email/Numer"/>
+                            <input type="email" placeholder="E-post"/>
                         </div>
+                        
                         <div class="confirm-info">
                             <input type="address" placeholder="Adress" required />
                         </div>
                         <div class="confirm-info">
-                            <input type="text" placeholder="Beskrivining" required />
-                        </div> 
+    <textarea placeholder="Meddelande" rows="4"></textarea>
+</div>
+
                         <div class="beställ-container"> 
                             <Link to="/">Beställ</Link>
                         </div>
