@@ -1,43 +1,35 @@
-//spara värde
-export const saveValue = async (key, value) => {
-    try {
-        const response = await fetch('https://forverkliga.se/JavaScript/api/jsonStore.php?method=save', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                key: key,
-                value: value
-            })
-        });
-        if (response.ok) {
-            console.log('Värdet sparades.');
-        } else {
-            console.error('Fel vid sparandet av värdet.');
-        }
-    } catch (error) {
-        console.error('Något gick fel:', error);
-    }
-};
-//hämta värde
-export const loadValue = async (key) => {
-    try {
-        const response = await fetch(`https://forverkliga.se/JavaScript/api/jsonStore.php?method=load`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Laddat värde:', data);
-        } else {
-            console.error('Fel vid laddning av värdet.');
-        }
-    } catch (error) {
-        console.error('Något gick fel:', error);
-    }
-};
+const baseUrl = 'https://forverkliga.se/JavaScript/api/jsonStore.php'
+const key = 'power-astronauts-2024'
+
+async function saveToApi(box) {
+	const url = baseUrl + '?method=save'
+	console.log('saveToApi sending request to ' + url);
+	const response = await fetch(url, {
+		method: 'POST',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			key: key,
+			value: box  // kan vara hela state
+		})
+	});
+	// If response.ok is true, the request succeeded
+	console.log('saveToApi response ok? ', response.ok);
+	// TODO: finish this when it's working
+}
+
+async function loadFromApi() {
+	const url = baseUrl + '?method=load&key=' + key
+	const response = await fetch(url, {
+		method: 'GET'
+	});
+	// const data = await response.json();
+	console.log('loadFromApi response ok? ', response.ok);
+	let result = await response.json()
+	console.log('loadFromApi result: ', result);
+	return result
+}
+
+export { saveToApi, loadFromApi }

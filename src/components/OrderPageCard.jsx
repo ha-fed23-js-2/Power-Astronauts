@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 
 const OrderPageCard = () => {
   
-  const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
+  const menuItems = useStore((state) => state.menuItems);
+
     const [count, setCount] = useState(1);
       return (
           <>

@@ -1,11 +1,33 @@
 import { Link, NavLink, Outlet } from "react-router-dom"
 import './root.css'
 import Logga from "../assets/Logga.svg"
+import { loadFromApi, saveToApi } from '../data/api';
+import { useStore } from '../data/menuItems'
 
 
 // Router motsvarar App-komponenten
 // Består av en statisk del (visas alltid) och en dynamisk (Outlet ersätts av andra komponenter)
-const Root = () => (
+const Root = () => {
+
+	const setMenuItems = useStore((state) => state.setMenuItems);
+
+    const handleSave = async () => {
+        const menuItems = useStore.getState().menuItems;
+        await saveToApi(menuItems);
+        console.log('Meny sparad!');
+    };
+
+    const handleLoad = async () => {
+        const loadedMenuItems = await loadFromApi();
+        if (loadedMenuItems && loadedMenuItems.length > 0) {
+            setMenuItems(loadedMenuItems);
+           console.log('Meny laddad!');
+        } else {
+            console.log('Inga menyobjekt hittades.');
+        }
+    };
+
+	return (
 	<div className="app">
 		<header>
 		
@@ -52,10 +74,19 @@ const Root = () => (
 					</a>
 
 				</div>
+				{/* Nytt: Spara och Hämta knappar */}
+                <div>
+                    <button onClick={handleSave}>Spara Meny</button>
+                    <button onClick={handleLoad}>Hämta Meny</button>
+                </div>
 
 				
 		</footer>
 	</div>
-)
+	);
+}
+
+
+
 
 export default Root
