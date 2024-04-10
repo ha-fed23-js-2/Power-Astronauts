@@ -32,28 +32,24 @@
     position: sticky; 
     border-radius: 10px 10px 0 0 ;
     padding: 1em;
-    max-width: 400px;
-    overflow-y: auto;
 }
 .total-amount{
     background-color: #924128;
     color: #F0EBD4;
     padding: 0.5rem;
     border-radius: 0 0 10px 10px ;
+    padding-top: 1em;
     
 }
 
 .scroll-container{
     height: 100%;
     overflow-y: auto;
+    padding: 1em;
 }
 
 
-/* För Firefox */
-.scroll-container {
-    scrollbar-width: thin;
-    scrollbar-color: #333333 #f1f1f1;
-}
+
 
 .order-product-card {
     display: flex;
@@ -177,11 +173,12 @@
     max-width: 500px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-.selected-product-container h2 {
-    margin: 0 10px 0 10px;
-}
+
 .selected-product-container p {
-    margin: 0 10px 0 10px;
+    margin: 5px
+}
+.selected-product-container h3 {
+    margin: 5px;
 }
 .counter-wrapper {
     display: flex;
