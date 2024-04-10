@@ -37,5 +37,7 @@ const menuItems = [
       description: "Klassisk Biff Wallenberg serverad med potatispuré, ärtor, lingon och skirat smör."
     }
   ];
+
+  
   
     export default menuItems;
