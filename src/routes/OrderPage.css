@@ -221,6 +221,10 @@
   
   
   @media (max-width: 968px) {
+    .order-page-container {
+        flex-direction: column;
+    }
+
     .order-aside {
         position: relative;
         width: 50%;
@@ -266,16 +270,6 @@
        height: 120px;
        
     }
-
-    
-}
-
-@media (max-width: 668px) {
-    
-    .order-page-container {
-        flex-direction: column;
-    }
-
     .order-aside, .order-article{
         position: relative;
         width: 90%;
@@ -292,6 +286,14 @@
         align-items: center;
         
     }
+
+    
+}
+
+@media (max-width: 668px) {
+    
+   
+
    
 
     
