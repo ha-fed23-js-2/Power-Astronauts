@@ -1,10 +1,13 @@
-import menuItems from "../data/menuItems";
+import { useStore } from '../data/menuItems'
 import "./LandingPage.css";
 import "./EditCard.css";
-import EditCard from "../components/EditCard";
+import AddFood from '../components/AddFood';
+import EditCard from '../components/EditCard';
 
 
 const EditPage = (props) => {
+
+  const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
 
 
       return (
@@ -14,6 +17,7 @@ const EditPage = (props) => {
         {menuItems.map((item, index) => (
           <EditCard item={item} key={item.name} />
         ))}
+        <AddFood/>
         </div>
         </>
         )}

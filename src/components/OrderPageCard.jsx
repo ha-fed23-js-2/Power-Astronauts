@@ -1,10 +1,47 @@
-export default function OrderPageCard(props) {
-    return (
-        <div className="order-card">
-            <img src={props.item.image} alt={props.item.name} />
-            <h2 classname="namn">{props.item.name}</h2>
-            <p classname="beskrivning">{props.item.description}</p>
-            <p classname="pris">Pris: {props.item.price} kr</p>
-        </div>
-    )
-}
+import { useStore } from '../data/menuItems'
+import React, { useState } from 'react';
+
+import OrderPageArticle from './OrderPageArticle';
+
+
+const OrderPageCard = () => {
+  
+  const menuItems = useStore((state) => state.menuItems);
+
+    const [count, setCount] = useState(1);
+      return (
+          <>
+          <aside className="order-aside">
+          <div className="product-conatiner">
+          <div className="order-product-card">
+            {menuItems.map((item, index) => (
+              <div className="product-container" key={index}>
+                <img className="order-image" src={item.image} alt={item.name} />
+                <div>
+                  <div className="product-wrapper">
+                  <h2>{item.name}</h2>
+                  <p>{item.description}</p>
+                </div>
+                <div className="item-wrapper">
+                <p className="price">{item.price} kr</p>
+                <button className="show-more">Läs mer</button>
+                <button className="add-to-cart">+</button>
+                </div>
+                  </div>
+              </div>
+            ))}
+          </div>
+          </div>
+
+        </aside>
+        <article className="order-article">
+        <OrderPageArticle />
+        </article>
+          
+          
+          </>
+          
+      )
+  }
+  
+  export default OrderPageCard;

@@ -1,11 +1,13 @@
-import menuItems from "../data/menuItems";
 import LandingPageCard from "../components/LandingPageCard";
 import "./LandingPage.css";
-import LandingImg from "../assets/LandingImg.png"
+import LandingImg from "../assets/LandingImg.jpg"
 import Logga from "../assets/Logga.svg"
+import { useStore } from '../data/menuItems'
 
 
 const LandingPage = () => {
+  const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
+
   // const LandingPageCard = (props) => (
   //   <div>
   //       <h2>{props.item.name}</h2>
