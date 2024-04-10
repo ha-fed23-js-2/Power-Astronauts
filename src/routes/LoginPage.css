@@ -70,3 +70,38 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container, .input {
+        width: 90%;
+    }
+
+    .text {
+        font-size: 36px;
+    }
+
+    .input input {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 100px;
+        padding-bottom: 15px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    .submit-container {
+        flex-direction: column;
+    }
+
+    .submit {
+        width: 90%;
+    }
+}
