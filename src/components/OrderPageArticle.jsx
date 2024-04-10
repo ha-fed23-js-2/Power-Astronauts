@@ -18,7 +18,7 @@ const OrderPageArticle = () => {
             {menuItems.map((item, index) => (
               <div className="selected-product-container" key={index}>
                 <div className='selected'>
-                  <h2>{item.name}</h2>
+                  <h3>{item.name}</h3>
                   <p className="price">{item.price} kr</p>
                
                 
