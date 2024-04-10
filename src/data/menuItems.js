@@ -74,7 +74,10 @@ menuItems: [
       name: updatedItem.name,
       description: updatedItem.description,
       image: updatedItem.image,
+      price: updatedItem.price
     } : item)
-  }))
+  })),
+
+  setMenuItems: (items) => set({ menuItems: items })
 
 }));

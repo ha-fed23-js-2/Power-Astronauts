@@ -68,6 +68,30 @@
     height: 2em;
 }
 
+.edit-food-item{
+	display: flex;
+	flex-direction: column;
+}
+
+.edit-food-item input{
+	width: 30em;
+}
+
+.button-div{
+	display: flex;
+	justify-content: space-around;
+}
+
+.cancel-btn{
+	width: 10em;
+	height: 5em;
+}
+
+.save-button{
+	width: 10em;
+	height: 5em;
+}
+
 
 @media (max-width: 968px) {
 

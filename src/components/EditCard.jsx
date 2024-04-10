@@ -14,6 +14,7 @@ export default function EditCard({ item }) {
 
     function handleEditItem() {
         let updatedItem = {
+            id: item.id,
             image: image,
             name: name,
             description: description,
@@ -23,14 +24,21 @@ export default function EditCard({ item }) {
         setEditMode(false)
     }
 
+    function toggleEdit(){
+        setEditMode(!editMode)
+    }
+
     return <div> {editMode === true ?
-        <div>
-            <input onChange={(e) => setImage(e.target.value)}></input>
-            <input onChange={(e) => setName(e.target.value)}></input>
-            <input onChange={(e) => setDescription(e.target.value)}></input>
-            <input onChange={(e) => setPrice(e.target.value)}></input>
-            <button onClick={() => deleteItem(item.id)}></button>
-            <button onClick={handleEditItem}></button>
+        <div className="order-card">
+            <div className="edit-food-item">
+            <input className="edit-image" defaultValue={item.image} onChange={(e) => setImage(e.target.value)}></input>
+            <input className="edit-name" defaultValue={item.name} onChange={(e) => setName(e.target.value)}></input>
+            <input className="edit-description" defaultValue={item.description} onChange={(e) => setDescription(e.target.value)}></input>
+            <input className="edit-price" defaultValue={item.price} onChange={(e) => setPrice(e.target.value)}></input>
+            <div className="button-div"><button className="cancel-btn" onClick={toggleEdit}></button>
+            <button className="save-button" onClick={handleEditItem}></button>
+            </div>
+            </div>
         </div> :
         <div className="order-card">
             <img className="food-image" src={item.image} alt={item.name} />
@@ -43,7 +51,7 @@ export default function EditCard({ item }) {
                     </div>
                     <div className='action-btns'>
                         <button className='edit-btn'>
-                            <img src={Pen} alt='edit icon' onClick={handleEditItem}/>
+                            <img src={Pen} alt='edit icon' onClick={toggleEdit}/>
                         </button>
                         <button className='delete-btn'>
                             <img src={Delete} alt='delete icon' onClick={() => deleteItem(item.id)}/>
