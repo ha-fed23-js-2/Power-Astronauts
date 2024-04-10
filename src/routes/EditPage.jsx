@@ -1,7 +1,8 @@
 import { useStore } from '../data/menuItems'
 import "./LandingPage.css";
 import "./EditCard.css";
-import EditCard from "../components/EditCard";
+import AddFood from '../components/AddFood';
+import EditCard from '../components/EditCard';
 
 
 const EditPage = (props) => {
@@ -16,6 +17,7 @@ const EditPage = (props) => {
         {menuItems.map((item, index) => (
           <EditCard item={item} key={item.name} />
         ))}
+        <AddFood/>
         </div>
         </>
         )}
