@@ -1,6 +1,8 @@
 import React from "react"
-import { useState } from React
+import { useState } from "react"
 import { useStore } from '../data/menuItems'
+import Pen from '../assets/edit.png';
+import Delete from '../assets/delete.png';
 
 export default function MenuEditInputCard({ item }) {
     const { deleteItem, updateItem } = useStore((state) => { return { deleteItem: state.deleteItem, updateItem: state.updateItem } })
@@ -21,7 +23,7 @@ export default function MenuEditInputCard({ item }) {
         setEditMode(false)
     }
 
-    return <div> {editMode ?
+    return <div> {editMode === true ?
         <div>
             <input onChange={(e) => setImage(e.target.value)}></input>
             <input onChange={(e) => setName(e.target.value)}></input>
@@ -31,11 +33,22 @@ export default function MenuEditInputCard({ item }) {
             <button onClick={handleEditItem}></button>
         </div> :
         <div className="order-card">
-            <img src={props.item.image} alt={props.item.name} />
-            <h2 classname="namn">{props.item.name}</h2>
-            <p classname="beskrivning">{props.item.description}</p>
-            <p classname="pris">Pris: {props.item.price} kr</p>
-            <button onClick={setEditMode(true)}></button>
+            <img className="food-image" src={item.image} alt={item.name} />
+            <div className="text-column">
+                        <h2 className="namn">
+                            {item.name}
+                        </h2>
+                        <p className="pris">Pris: {item.price} kr</p>
+                        <p className="beskrivning">{item.description}</p>
+                    </div>
+                    <div className='action-btns'>
+                        <button className='edit-btn'>
+                            <img src={Pen} alt='edit icon' onClick={handleEditItem}/>
+                        </button>
+                        <button className='delete-btn'>
+                            <img src={Delete} alt='delete icon' onClick={() => deleteItem(item.id)}/>
+                        </button>
+                    </div>
         </div>
     }
     </div>
