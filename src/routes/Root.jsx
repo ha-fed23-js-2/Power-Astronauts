@@ -30,17 +30,12 @@ const Root = () => {
 	return (
 	<div className="app">
 		<header>
-		
-			<nav className="buttons">
-				<a><NavLink to= "/" > LandingPage </NavLink>
-				<NavLink to="/OrderPage"> Orderpage </NavLink>
-				<NavLink to="/ConfirmPage"> ConfirmPage </NavLink>
-                <NavLink to="/EditPage"> EditPage </NavLink></a>
-			</nav>
-			
+
+		<div className="header-row">
+		<NavLink to="/OrderPage" className="header-options">Beställ</NavLink>
 			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
-			<div className="header-row">
-                <NavLink to="/OrderPage" className="header-options">Beställ</NavLink>
+			
+                
 				<NavLink to="/" className="header-options">Meny</NavLink>
             </div>
 		</header>

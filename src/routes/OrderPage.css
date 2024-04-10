@@ -4,6 +4,7 @@
 }
 .order-page-container{
     display: flex;
+    justify-content: center;
     flex-direction: row;
     background-color: #222222;
     
@@ -21,19 +22,39 @@
     padding: 1em;
     border-radius: 10px;
     margin: 1em;
-    width: 40%; 
+    width: 30%; 
     height: 100vh; 
     overflow-y: auto;
 }
 .shopping-cart{
     background-color: #924128;
-    height: 75vh; 
+    height: 50vh; 
     position: sticky; 
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0 ;
     padding: 1em;
-    margin: 1em;
+    max-width: 400px;
     overflow-y: auto;
 }
+.total-amount{
+    background-color: #924128;
+    color: #F0EBD4;
+    padding: 0.5rem;
+    border-radius: 0 0 10px 10px ;
+    
+}
+
+.scroll-container{
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+/* För Firefox */
+.scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #333333 #f1f1f1;
+}
+
 .order-product-card {
     display: flex;
     flex-direction: column;
@@ -178,6 +199,24 @@
     transition: transform 0.3s ease;
 }
 
+.total-amount-wraper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+    border-top: 2px solid #F0EBD4;
+   
+}
+.order-title{
+    color: white;
+    font-size: 2rem;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: #924128;
+    text-align: center;
+}
   
   
   
@@ -185,6 +224,18 @@
   
   
   @media (max-width: 968px) {
+    .order-aside {
+        position: relative;
+        width: 50%;
+        margin: 0rem;
+        padding: 1rem;
+    }
+
+    .order-article{
+        position: relative;
+        margin: 0rem;
+        padding: 1rem;
+    }
     
     
    
@@ -228,11 +279,24 @@
         flex-direction: column;
     }
 
-    .order-article, .order-aside {
+    .order-aside, .order-article{
         position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        width: 90%;
+        margin: 0rem;
+        padding: 1rem;
     }
+    .shopping-cart {
+        max-width: 100%;
+    }
+
+    .order-aside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+   
+
+    
 
 }
