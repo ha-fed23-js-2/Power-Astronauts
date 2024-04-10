@@ -1,0 +1,73 @@
+
+
+.order-card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1.5px solid #F0EBD4;
+	width: 100%; 
+    max-width: 650px;
+    margin: auto;
+    height: 180px;
+	margin: auto;
+}
+
+.add-item {
+	border: 1.5px solid #F0EBD4;
+}
+
+.text-column{
+	display: flex;
+	flex-direction: column;	
+}
+
+.edit-btn img, .delete-btn img{
+	cursor: pointer;
+	box-shadow: 0 0 0;
+}
+
+.edit-btn, .delete-btn{
+	border: none;
+	background: none;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.food-image {
+	margin-right: 20px;
+	width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+    transition: transform 0.5s;
+}
+
+.action-btns {
+	display: flex;
+    align-items: flex-end;
+	filter: invert(100%) grayscale(100%);
+	position: relative;
+	bottom: 3.5em;
+	
+}
+
+.beskrivning {
+	max-width: 30vw;
+}
+
+
+
+@media (max-width: 968px) {
+
+	.order-card {
+		height: auto;
+		flex-direction: column;
+	}
+ 
+	.food-image {
+		width: 120px;
+		height: 120px;
+	}
+}
+

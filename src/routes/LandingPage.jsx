@@ -15,9 +15,14 @@ const LandingPage = () => {
   //   )
     return (
         <>
+         <div className="frontPic-container">
+         <img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
+
+        </div>
+
       
   
-		<img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
+		
 	
         
 
@@ -27,7 +32,7 @@ const LandingPage = () => {
         <LandingPageCard item={item} key={item.name} />
       ))}
     </div>
-
+   
 	<img className="loggaHeaderLower" src={Logga} alt="Karlssons husmanskost logga" />
 	  </div>
 	  
