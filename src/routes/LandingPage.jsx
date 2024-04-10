@@ -1,6 +1,6 @@
 import LandingPageCard from "../components/LandingPageCard";
 import "./LandingPage.css";
-import LandingImg from "../assets/LandingImg.png"
+import LandingImg from "../assets/LandingImg.jpg"
 import Logga from "../assets/Logga.svg"
 import { useStore } from '../data/menuItems'
 
