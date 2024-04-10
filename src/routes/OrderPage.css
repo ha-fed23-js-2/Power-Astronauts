@@ -41,6 +41,7 @@
     justify-content: center;
     background-color: #924128;
     padding: 1rem;
+    border-radius: 10px;
 }
 
 .product-container {
@@ -104,6 +105,24 @@
     background-color: #713320;
     transform: scale(1.05); 
 }
+
+.complete{
+    background-color: #F0EBD4;
+    color: #222222;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 0px #0000004c;
+    transition: transform 0.3s ease; 
+    margin-top: 0.5;
+}
+
+.complete:hover {
+    background-color: #dad5be;
+    transform: scale(1.05); 
+}
 .add-to-cart { 
     background-color: #F0EBD4;
     border: none;
@@ -147,43 +166,23 @@
     display: flex;
     justify-content: flex-end;
 }
-
-.counter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #a0522d;
-    border-radius: 5px;
-    padding: 0.3rem;
-    margin: 0.5em;
-    max-width: 100px;
-
-  }
-  
-  .counter button {
-    background-color: #F0EBD4;
+.selected{
+    background-color: #222222;
+    color: #F0EBD4;
+    padding: 8px 15px;
     border: none;
-    color: black;
-    padding: 5px 10px;
-    margin: 1px;
+    border-radius: 7px;
+    font-weight: 700;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-  }
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
   
-  .counter .count-display {
-    padding: 5px 10px;
-    margin: 1px;
-    font-size: 16px;
-    color: black;
-    background-color: #F0EBD4;
-    border-radius: 5px;
-  }
   
-  .counter button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
+  
+  
+  
   
   @media (max-width: 968px) {
     

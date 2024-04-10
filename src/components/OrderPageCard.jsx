@@ -1,6 +1,8 @@
 import { useStore } from '../data/menuItems'
 import React, { useState } from 'react';
 
+import OrderPageArticle from './OrderPageArticle';
+
 
 const OrderPageCard = () => {
   
@@ -33,29 +35,7 @@ const OrderPageCard = () => {
 
         </aside>
         <article className="order-article">
-          <div className="shopping-cart">
-           <div>
-            {menuItems.map((item, index) => (
-              <div className="selected-product-container" key={index}>
-                <div>
-                  <h2>{item.name}</h2>
-                <p className="price">{item.price} kr</p>
-                <div className="counter-wrapper">
-                  <div className="counter">
-                    <button onClick={() => setCount(count - 1)} disabled={count <= 0}>-</button>
-                    <div className="count-display">{count}</div>
-                    <button onClick={() => setCount(count + 1)}>+</button>
-                  </div>
-                </div>
-                
-                  </div>
-              </div>
-            ))}
-            
-          </div>
-          
-
-          </div>
+        <OrderPageArticle />
         </article>
           
           

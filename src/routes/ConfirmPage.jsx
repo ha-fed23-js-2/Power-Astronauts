@@ -11,8 +11,8 @@ const ConfirmPage = () => {
 
     return (
         <div className="confirm-page-body">
-            <div className="order-page-container">
-                <aside className="order-aside">
+            <div className="confirm-page-container">
+                <aside className="confirm-aside">
                     <div className="header">
                         <div className="underline"></div>
                     </div>
