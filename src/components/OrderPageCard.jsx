@@ -1,8 +1,10 @@
-import menuItems from "../data/menuItems";
+import { useStore } from '../data/menuItems'
 import React, { useState } from 'react';
 
 
 const OrderPageCard = () => {
+  
+  const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
     const [count, setCount] = useState(1);
       return (
           <>
