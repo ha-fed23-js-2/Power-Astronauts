@@ -1,8 +1,10 @@
 import LoginCard from "../components/LoginCard";
 import "./ConfirmPage.css";
-import menuItems from "../data/menuItems";
+import { useStore } from '../data/menuItems'
 
 const ConfirmPage = () => {
+    const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
+
     return (
         <>
          <div className="confirm-page-body">

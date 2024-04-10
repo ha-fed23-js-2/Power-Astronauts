@@ -1,5 +1,8 @@
+import {create} from "zustand";
 
-const menuItems = [
+export const useStore = create((set) => ({
+
+menuItems: [
     {
       name: "Köttbullar med Potatismos",
       image: "https://mylla.se/cdn/shop/products/kottbullar-med-potatismos-maten-e-klar-434097_700x700.webp?v=1676900287",
@@ -36,8 +39,36 @@ const menuItems = [
       price: 150,
       description: "Klassisk Biff Wallenberg serverad med potatispuré, ärtor, lingon och skirat smör."
     }
-  ];
+  ],
 
-  
-  
-    export default menuItems;
+  addItem: (item) =>
+  set((state) => ({
+    menuItems: [
+      ...state.menuItems,
+      {
+        name: item.name,
+        id: item.name,
+        image: item.image,
+        price: item.price,
+        description: item.description
+      }
+    ]
+  })),
+
+  deleteItem: (id) =>
+  set((state) => ({
+    menuItems: state.menuItems.filter((item) => item.id !== id)
+  })),
+
+  updateItem: (updatedItem) =>
+  set((state) => ({
+    menuItems: state.menuItems.map((item) => item.id === updatedItem.id ? {
+      ...item,
+
+      name: updatedItem.name,
+      description: updatedItem.description,
+      image: updatedItem.image,
+    } : item)
+  }))
+
+}));
