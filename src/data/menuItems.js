@@ -79,9 +79,26 @@ menuItems: [
     } : item)
   })),
 
-  setMenuItems: (items) => set({ menuItems: items })
+  setMenuItems: (items) => set({ menuItems: items }),
 
-  
+  orderedItems: [],
+
+  addOrderedItem: (item) =>
+  set((state) => ({
+    orderedItems: [
+      ...state.orderedItems,
+      {
+        ...item,
+
+        id: Date.now()
+      }
+    ]
+  })),
+
+  deleteOrderedItem: (id) =>
+  set((state) => ({
+    orderedItems: state.orderedItems.filter((item) => item.id !== id)
+  })),
 
 }));
 
