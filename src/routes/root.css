@@ -12,7 +12,7 @@ body {
 }
 
 header{
-	background-color: #343232;
+    background-color: #222222;
 	display: flex;
 	flex-direction: column;
 	height: 20vh;
@@ -49,43 +49,92 @@ header{
 }
 
 
-footer{
-	display: flex;
-	justify-content: space-between;
-	height: 20vh;
-
-	background-color: #924128;
-
-}
-.info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	margin: 1rem;
-	text-align: center;
-}
-.info h3{
-	margin: 0.5rem;
+footer {
+    color: #fff;
+    padding: 20px 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
 }
 
-.info > p{
-	margin: 0;
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.info, .login-btn{
+    margin-bottom: 20px;
+}
+
+.info h3 {
+    margin-bottom: 15px;
+}
+
+.info address, .info p, .action-buttons button, .login-btn a {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.login-btn a {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    
+}
+.login-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
-.login-btn{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	text-align: center;
-	color: white;
-	padding: 1rem;
-	width: 5rem;
-}
 
-.login-btn a{
-	color: white;
+@media (min-width: 768px) {
+    footer {
+        padding: 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .info, .login-btn{
+        flex: 1;
+        margin-bottom: 0; 
+    }
+
+    .info {
+        margin-right: 20px; 
+    }
+
+   
+
 }
+@media (max-width: 768px) {
+    .loggaHeaderLower{
+        width: 150px;
+        height: auto;
+    }
+    .loggaHeader {
+        width: 150px; 
+        height: auto;
+       
+    }
+
+    .header-options{
+        
+        font-size: 15px;
+    }
+    }

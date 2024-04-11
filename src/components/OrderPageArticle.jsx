@@ -1,6 +1,7 @@
 import { useStore } from '../data/menuItems'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Delete from '../assets/delete.png';
 
 
 const OrderPageArticle = () => {
@@ -10,7 +11,7 @@ const OrderPageArticle = () => {
    
       return (
           <>
-          
+          <div className='sticky'>
           <h3 className="order-title">Din beställning</h3>
           <div className="shopping-cart">
           
@@ -20,6 +21,9 @@ const OrderPageArticle = () => {
                 <div className='selected'>
                   <h3>{item.name}</h3>
                   <p className="price">{item.price} kr</p>
+                  <button className='cart-delete-btn'>
+                            <img src={Delete} alt='delete icon'/>
+                        </button>
                
                 
                   </div>
@@ -38,6 +42,10 @@ const OrderPageArticle = () => {
 </div>
 
           </div>
+
+          </div>
+          
+          
         
           
           

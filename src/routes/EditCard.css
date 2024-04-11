@@ -43,14 +43,24 @@
     transition: transform 0.5s;
 }
 
-.action-btns {
+.edit-row {
 	display: flex;
-    align-items: flex-end;
+	flex-direction: row;
+	justify-content: center; 
+	align-items: center; 
+	position: relative; 
+  }
+
+.action-btns {
+	position: absolute; 
+	right: -25em; 
+	top: 1em; 
+	transform: translateY(-50%); 
+	display: flex;
+	align-items: center; 
 	filter: invert(100%) grayscale(100%);
-	position: relative;
-	bottom: 3.5em;
-	
-}
+  }
+
 
 .beskrivning {
 	max-width: 30vw;
@@ -104,5 +114,21 @@
 		width: 120px;
 		height: 120px;
 	}
+
+	.edit-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center; 
+		align-items: center; 
+		position: relative; 
+	  }
+	
+	.action-btns {
+		position: absolute; 
+		right: -4em; 
+		top: 50%; 
+	  }
+	
+	
 }
 

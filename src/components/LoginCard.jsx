@@ -18,9 +18,9 @@ const LoginCard = () => {
 
     return (
         <div>
-            <div className='container'>
+            <div className='loggin-container'>
                 <div className="header">
-                    <div className="text">Sign Up</div>
+                    <div className="text">Menyportal</div>
                     <div className="underline"></div>
                 </div>
                 <div className="input-frame">
@@ -34,7 +34,7 @@ const LoginCard = () => {
                 </div>
                 <div className="submit-container">
                     <Link to="/EditPage"> {/* Använd Link för att navigera till EditPage */}
-                        <button className="submit" onClick={checkPassword}>Log In</button>
+                        <button className="submit" onClick={checkPassword}>Logga in</button>
                     </Link>
                 </div>
             </div>

@@ -2,19 +2,12 @@ import LandingPageCard from "../components/LandingPageCard";
 import "./LandingPage.css";
 import LandingImg from "../assets/LandingImg.jpg"
 import Logga from "../assets/Logga.svg"
-import { useStore } from '../data/menuItems'
+
 
 
 const LandingPage = () => {
-  const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
 
-  // const LandingPageCard = (props) => (
-  //   <div>
-  //       <h2>{props.item.name}</h2>
-  //       <p>{props.item.description}</p>
-  //       <p>Pris: {props.item.price} kr</p>
-  //   </div>
-  //   )
+
     return (
         <>
          <div className="frontPic-container">
@@ -30,9 +23,7 @@ const LandingPage = () => {
 
        <div className="outer-container">
 		<div className="menu-frame">
-      {menuItems.map((item, i) => (
-        <LandingPageCard item={item} key={item.name} />
-      ))}
+    <LandingPageCard />
     </div>
    
 	<img className="loggaHeaderLower" src={Logga} alt="Karlssons husmanskost logga" />
