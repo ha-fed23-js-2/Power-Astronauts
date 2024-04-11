@@ -24,7 +24,6 @@ const OrderPageCard = () => {
                 </div>
                 <div className="item-wrapper">
                 <p className="price">{item.price} kr</p>
-                <button className="show-more">Läs mer</button>
                 <button className="add-to-cart">+</button>
                 </div>
                   </div>

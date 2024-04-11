@@ -76,6 +76,13 @@
 
 }
 
+.error.invalid {
+    color: rgb(213, 10, 10);
+}
+input.valid {
+    border-left: 5px solid #1d7f56;
+
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
