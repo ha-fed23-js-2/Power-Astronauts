@@ -53,7 +53,7 @@
 
 .action-btns {
 	position: absolute; 
-	right: -20em; 
+	right: -25em; 
 	top: 1em; 
 	transform: translateY(-50%); 
 	display: flex;
