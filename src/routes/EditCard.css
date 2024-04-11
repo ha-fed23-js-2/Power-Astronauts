@@ -71,6 +71,7 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
+
 }
 
 .add-food-input input {
@@ -92,14 +93,18 @@
 	justify-content: space-around;
 }
 
-.cancel-btn{
+.save-button, .cancel-btn{
+	background-color: #924128;
+    color: #F0EBD4;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 0px #0000004c;
+    transition: transform 0.3s ease; 
 	width: 10em;
-	height: 5em;
-}
-
-.save-button{
-	width: 10em;
-	height: 5em;
+	margin-top: 1em;
 }
 
 
