@@ -41,15 +41,9 @@ export default function EditCard({ item }) {
             </div>
         </div> :
         <div className="order-card">
+            <div className="edit-row">
             <img className="food-image" src={item.image} alt={item.name} />
-            <div className="text-column">
-                        <h2 className="namn">
-                            {item.name}
-                        </h2>
-                        <p className="pris">Pris: {item.price} kr</p>
-                        <p className="beskrivning">{item.description}</p>
-                    </div>
-                    <div className='action-btns'>
+            <div className='action-btns'>
                         <button className='edit-btn'>
                             <img src={Pen} alt='edit icon' onClick={toggleEdit}/>
                         </button>
@@ -57,6 +51,17 @@ export default function EditCard({ item }) {
                             <img src={Delete} alt='delete icon' onClick={() => deleteItem(item.id)}/>
                         </button>
                     </div>
+
+            </div>
+            
+            <div className="text-column">
+                        <h2 className="namn">
+                            {item.name}
+                        </h2>
+                        <p className="pris">Pris: {item.price} kr</p>
+                        <p className="beskrivning">{item.description}</p>
+                    </div>
+                    
         </div>
     }
     </div>

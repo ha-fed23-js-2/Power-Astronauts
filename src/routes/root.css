@@ -93,9 +93,8 @@ footer {
 
 a:-webkit-any-link {
     color: white;
-
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
