@@ -1,4 +1,5 @@
 import {create} from "zustand";
+import { loadFromApi, saveToApi } from '../data/api';
 
 export const useStore = create((set) => ({
 
@@ -80,4 +81,25 @@ menuItems: [
 
   setMenuItems: (items) => set({ menuItems: items })
 
+  
+
 }));
+
+
+// Funktion för att spara meny till API
+export async function handleSave() {
+  const menuItems = useStore.getState().menuItems;
+  await saveToApi(menuItems); 
+  console.log('Meny sparad!');
+}
+
+// Funktion för att ladda meny från API
+export async function handleLoad() {
+  const loadedMenuItems = await loadFromApi(); 
+  if (loadedMenuItems && loadedMenuItems.length > 0) {
+    useStore.setState({ menuItems: loadedMenuItems });
+    console.log('Meny laddad!');
+  } else {
+    console.log('Inga menyobjekt hittades.');
+  }
+}
