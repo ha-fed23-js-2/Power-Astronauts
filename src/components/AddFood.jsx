@@ -17,7 +17,9 @@ function AddFood() {
             price: price,
             description: description
         }
+
         addFood(newFood)
+        handleSave()
     }
 
     return (
@@ -34,10 +36,7 @@ function AddFood() {
             <input className="add-description" type="text" onChange={(e)=> setDescription(e.target.value)} />
             <button onClick={handleAdd}>Lägg till</button>
         </section>
-        <div>
-            <button type="button" onClick={handleSave}>Spara Meny</button>
-            <button type="button" onClick={handleLoad}>Hämta Meny</button>     
-        </div>
+       
     
 
    

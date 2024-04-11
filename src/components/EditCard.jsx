@@ -1,8 +1,8 @@
 import React from "react"
 import { useState } from "react"
-import { useStore } from '../data/menuItems'
 import Pen from '../assets/edit.png';
 import Delete from '../assets/delete.png';
+import { useStore, handleSave, handleLoad } from '../data/menuItems'
 
 export default function EditCard({ item }) {
     const { deleteItem, updateItem } = useStore((state) => { return { deleteItem: state.deleteItem, updateItem: state.updateItem } })
@@ -22,11 +22,18 @@ export default function EditCard({ item }) {
         }
         updateItem(updatedItem)
         setEditMode(false)
+        handleSave()
     }
 
     function toggleEdit(){
         setEditMode(!editMode)
     }
+
+    function handleDeleteItem(item) {
+        deleteItem(item.id)
+        handleSave()
+    }
+    
 
     return <div> {editMode === true ?
         <div className="order-card">
@@ -48,7 +55,7 @@ export default function EditCard({ item }) {
                             <img src={Pen} alt='edit icon' onClick={toggleEdit}/>
                         </button>
                         <button className='delete-btn'>
-                            <img src={Delete} alt='delete icon' onClick={() => deleteItem(item.id)}/>
+                            <img src={Delete} alt='delete icon' onClick={() => handleDeleteItem(item)}/>
                         </button>
                     </div>
 
