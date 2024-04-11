@@ -1,13 +1,59 @@
 import LoginCard from "../components/LoginCard";
 import "./ConfirmPage.css";
-
-
-
 import { Link } from "react-router-dom";
 import { useStore } from '../data/menuItems'
+import { useState } from "react";
 
 const ConfirmPage = () => {
-    const { menuItems } = useStore((state) => { return { menuItems: state.menuItems } })
+    const { orderedItems } = useStore((state) => { return { orderedItems: state.orderedItems } })
+
+    //Validate values
+    const [name, setName] = useState('');
+    const [nameTouched, setNameTouched] = useState(false);
+
+    const [email, setEmail] = useState('');
+    const [emailTouched, setEmailTouched] = useState(false);
+
+    const [telefon, setTelefon] = useState('');
+    const [telefonTouched, setTelefonlTouched] = useState(false);
+
+    const nameIsValid = name.length > 0;
+    const nameErrorMessage = nameIsValid ? '' : 'Vänligen, fyll i ditt namn';
+
+    const emailIsValid = email.length > 0 && email.includes('@');
+    const emailErrorMessage = emailIsValid ? '' : 'Vänligen, fyll i din e-postadress';
+
+    const telefonIsValid = telefon.length > 0 && /^\d+$/.test(telefon);
+    const telefonErrorMessage = telefonIsValid ? '' : 'Vänligen, fyll i din telefonnummer';
+
+    //CSS variables
+    let nameErrorClass = 'error ', nameClass = '';
+    if (!nameTouched) {
+        nameErrorClass += 'hidden';
+    } else {
+        nameErrorClass += nameIsValid ? 'hidden' : 'invalid';
+        nameClass += nameIsValid ? 'valid' : 'invalid';
+    }
+
+    // Email CSS variables
+    let emailErrorClass = 'error-mail ', emailClass = '';
+    if (!emailTouched) {
+        emailErrorClass += 'hidden';
+    } else {
+        emailErrorClass += emailIsValid ? 'hidden' : 'invalid';
+        emailClass += emailIsValid ? 'valid' : 'invalid';
+    }
+
+    //Telefon CSS variables
+    let telefonErrorClass = 'error-telefon ', telefonClass = '';
+    if (!telefonTouched) {
+        telefonErrorClass += 'hidden';
+    } else {
+        telefonErrorClass += telefonIsValid ? 'hidden' : 'invalid';
+        telefonClass += telefonIsValid ? 'valid' : 'invalid';
+    }
+
+
 
     return (
         <div className="confirm-page-body">
@@ -18,27 +64,45 @@ const ConfirmPage = () => {
                     </div>
                     <div class="confirm-info-frame">
                         <div class="confirm-info">
-                            <input type="text" placeholder="Namn" required />
-                        </div>
-                        <div class="confirm-info">
-                            <input type="email" placeholder="E-post"/>
-                        </div>
-                        
-                        <div class="confirm-info">
-                            <input type="address" placeholder="Adress" required />
-                        </div>
-                        <div class="confirm-info">
-    <textarea placeholder="Meddelande" rows="4"></textarea>
-</div>
+                            <input type="text" placeholder="Namn" required
+                                className={nameClass}
+                                value={name}
+                                onChange={event => setName(event.target.value)}
+                                onBlur={() => setNameTouched(true)}
+                            />
+                            <p className={nameErrorClass}> {nameErrorMessage} &nbsp; </p>
 
-                        <div class="beställ-container"> 
+                        </div>
+                        <div class="confirm-info">
+                            <input type="email" placeholder="E-post"
+                                className={emailClass}
+                                value={email}
+                                onChange={event => setEmail(event.target.value)}
+                                onBlur={() => setEmailTouched(true)}
+                            />
+                            <p className={emailErrorClass}> {emailErrorMessage} &nbsp; </p>
+                        </div>
+                        <div class="confirm-info">
+                            <input type="telefon" placeholder="Telefonnummer" required
+                                className={telefonClass}
+                                value={telefon}
+                                onChange={event => setTelefon(event.target.value)}
+                                onBlur={() => setTelefonlTouched(true)}
+                            />
+                            <p className={telefonErrorClass}> {telefonErrorMessage} &nbsp; </p>
+                        </div>
+                        <div class="confirm-info">
+                            <textarea placeholder="Ev; meddelande" rows="4"></textarea>
+                        </div>
+
+                        <div class="beställ-container">
                             <Link to="/">Beställ</Link>
                         </div>
                     </div>
                 </aside>
                 <article className="confirm-article">
                     <div className="confirm-shopping-cart">
-                        {menuItems.map((item, index) => (
+                        {orderedItems.map((item, index) => (
                             <div className="product-container" key={index}>
                                 <img className="order-image" src={item.image} alt={item.name} />
                                 <div>
@@ -52,6 +116,12 @@ const ConfirmPage = () => {
                                 </div>
                             </div>
                         ))}
+                        <div className='total-amount'>
+                            <div className='total-amount-wraper'>
+
+                                <p className="total-amount">Totalt: {orderedItems.reduce((total, item) => total + item.price, 0)} kr</p>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </div>

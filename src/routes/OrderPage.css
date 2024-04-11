@@ -107,6 +107,11 @@
     flex-direction: column;
 }
 
+.product-wrapper h2{
+    font-family: 'Dancing Script', Handwriting;
+}
+
+
 .item-wrapper{
     display: flex;
     flex-direction: row;
@@ -187,6 +192,7 @@
 }
 .selected-product-container h3 {
     margin: 5px;
+    font-family: 'Delius Swash Caps', swap;
 }
 .counter-wrapper {
     display: flex;
@@ -230,10 +236,8 @@
     padding: 5px;
     cursor: pointer;
     display: flex;
-   
+    text-align: right;
 }
-  
-  
   
   
   
