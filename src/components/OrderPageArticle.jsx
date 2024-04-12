@@ -20,11 +20,17 @@ const OrderPageArticle = () => {
             {orderedItems.map((item, index) => (
               <div className="selected-product-container" key={index}>
                 <div className='selected'>
-                  <h3>{item.name}</h3>
-                  <p className="price">{item.price} kr</p>
+                  <div className='name-price'>
+                    <h3>{item.name}</h3>
+                    <p className="price">{item.price} kr</p>
+                  </div>
+                  <div className='delete-conatiner'>
                   <button className='cart-delete-btn' onClick={() => deleteOrderedItem(item.id)}>
                     <img src={Delete} alt='delete icon' />
                   </button>
+
+                  </div>
+                  
 
 
                 </div>

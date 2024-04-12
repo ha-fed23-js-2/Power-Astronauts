@@ -199,6 +199,8 @@
     justify-content: flex-end;
 }
 .selected{
+    display: flex;
+    flex-direction: row;
     background-color: #222222;
     color: #F0EBD4;
     padding: 8px 15px;
@@ -208,6 +210,11 @@
     cursor: pointer;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
+}
+.delete-conatiner{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
 .total-amount-wraper{
