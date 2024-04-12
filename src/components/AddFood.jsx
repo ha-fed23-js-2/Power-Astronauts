@@ -34,7 +34,7 @@ function AddFood() {
             <input type="text" onChange={(e)=> setPrice(e.target.value)} />
             <label>Beskrivning:</label>
             <input className="add-description" type="text" onChange={(e)=> setDescription(e.target.value)} />
-            <button onClick={handleAdd}>Lägg till</button>
+            <button className='add-new-food-item' onClick={handleAdd}>Lägg till</button>
         </section>
        
     
