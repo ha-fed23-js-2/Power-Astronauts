@@ -10,7 +10,7 @@ const LandingPageCard = () => {
       {menuItems.map((item) => (
         <div className="landing-card" key={item.id}>
           <h2 className="landing-card-namn">{item.name}</h2>
-          <p className="beskrivning">{item.description}</p>
+          <p className="Meny-beskrivning">{item.description}</p>
           <p className="pris">{item.price} kr</p>
         </div>
       ))}

@@ -30,7 +30,7 @@ function Footer() {
                 </div>
 
                 <div className="login-btn">
-                    <NavLink to="/LoginPage">Log in</NavLink>
+                    <NavLink to="/Logga-in">Log in</NavLink>
                 </div>
 
             </div>

@@ -24,19 +24,19 @@ const router = createHashRouter([
                 element: <LandingPage />
             },
 			{
-				path: '/OrderPage',
+				path: '/Beställ',
 				element: <OrderPage />
 			},
 			{
-				path: '/ConfirmPage',
+				path: '/bekräfta',
 				element: <ConfirmPage />
 			},
 			{
-				path: '/LoginPage',
+				path: '/Logga-in',
 				element: <LoginPage />
 			},
             {
-                path: '/EditPage',
+                path: '/Menyportal',
                 element: <EditPage />
             }
 		]

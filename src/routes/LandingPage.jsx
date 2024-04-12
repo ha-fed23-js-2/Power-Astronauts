@@ -22,9 +22,13 @@ const LandingPage = () => {
         
 
        <div className="outer-container">
-		<div className="menu-frame">
+        <div className="menu-frame-container">
+        <div className="menu-frame">
     <LandingPageCard />
     </div>
+
+        </div>
+		
    
 	<img className="loggaHeaderLower" src={Logga} alt="Karlssons husmanskost logga" />
 	  </div>

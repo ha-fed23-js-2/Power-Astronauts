@@ -133,9 +133,10 @@
 .close {
     position: relative;
     top: -4em;
-    right: -10em;
+    right: -9.2em;
     cursor: pointer;
     font-size: 20px;
+    font-weight: bolder;
     color: #222222;
 }
 
