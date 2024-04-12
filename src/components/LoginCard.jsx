@@ -148,7 +148,7 @@ const LoginCard = () => {
                 </div>
                     :
                     <div className="submit-container">
-                        <Link to="/EditPage">
+                        <Link to="/Menyportal">
                             <button className="submit">Logga in</button>
                         </Link>
                     </div>}
