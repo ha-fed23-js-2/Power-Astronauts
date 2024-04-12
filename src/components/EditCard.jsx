@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Pen from '../assets/edit.png';
 import Delete from '../assets/delete.png';
 import { useStore, handleSave, handleLoad } from '../data/menuItems'
@@ -11,8 +11,18 @@ export default function EditCard({ item }) {
     const [name, setName] = useState(item.name)
     const [description, setDescription] = useState(item.description)
     const [price, setPrice] = useState(item.price)
+    const [nameError, setNameError] = useState(' ')
+    const [imageError, setImageError] = useState(' ')
+    const [priceError, setPriceError] = useState(' ')
+    const [descriptionError, setDescriptionError] = useState(' ')
 
-    function handleEditItem() {
+    useEffect(() => {
+        if (nameError === '' && imageError === '' && priceError === '' && descriptionError === ''){
+            handleEditItem(item);
+        }
+    }, [nameError, imageError, priceError, descriptionError]);
+
+    function handleEditItem(item) {
         let updatedItem = {
             id: item.id,
             image: image,
@@ -33,17 +43,72 @@ export default function EditCard({ item }) {
         deleteItem(item.id)
         handleSave()
     }
-    
+
+    function checkName() {
+        if (name.length === 0) {
+            setNameError('Vänligen fyll i ett namn.')
+        }
+        else {
+            setNameError('')
+        }
+    }
+
+    function checkImage() {
+        if (image.length === 0) {
+            setImageError('Vänligen fyll i en bildlänk.')
+        }
+        else if (!image.includes('http')) {
+            setImageError('Länken måste ha ett giltigt format.')
+        }
+        else {
+            setImageError('')
+        }
+    }
+
+    function checkPrice() {
+        if (price.length === 0) {
+            setPriceError('Vänligen fyll i ett pris.')
+        }
+        else if (/[A-Öa-ö]+$/.test(price)) {
+            setPriceError('Detta fält kan bara ha siffror i sig.')
+        }
+        else {
+            setPriceError('')
+        }
+    }
+
+    function checkDescription() {
+        if (description.length === 0) {
+            return setDescriptionError('Vänligen fyll i en beskrivning.')
+        }
+        else if (description.length < 10) {
+            return setDescriptionError('Beskrivningar måste vara längre än 10 bokstäver.')
+        }
+        else {
+            setDescriptionError('')
+        }
+    }
+
+    function checkError() {
+        checkName()
+        checkImage()
+        checkPrice()
+        checkDescription()
+    }
 
     return <div> {editMode === true ?
         <div className="order-card">
             <div className="edit-food-item">
-            <input className="edit-image" defaultValue={item.image} onChange={(e) => setImage(e.target.value)}></input>
             <input className="edit-name" defaultValue={item.name} onChange={(e) => setName(e.target.value)}></input>
-            <input className="edit-description" defaultValue={item.description} onChange={(e) => setDescription(e.target.value)}></input>
+            <p>{nameError}</p>
+            <input className="edit-image" defaultValue={item.image} onChange={(e) => setImage(e.target.value)}></input>
+            <p>{imageError}</p>
             <input className="edit-price" defaultValue={item.price} onChange={(e) => setPrice(e.target.value)}></input>
+            <p>{priceError}</p>
+            <input className="edit-description" defaultValue={item.description} onChange={(e) => setDescription(e.target.value)}></input>
+            <p>{descriptionError}</p>
             <div className="button-div"><button className="cancel-btn" onClick={toggleEdit}>Tillbaka</button>
-            <button className="save-button" onClick={handleEditItem}>Spara</button>
+            <button className="save-button" onClick={checkError}>Spara</button>
             </div>
             </div>
         </div> :

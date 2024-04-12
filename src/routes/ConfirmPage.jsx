@@ -53,17 +53,26 @@ const ConfirmPage = () => {
         telefonClass += telefonIsValid ? 'valid' : 'invalid';
     }
 
+     
+        const [showPopup, setShowPopup] = useState(false);
+    
+        const handleClick = () => {
+            setShowPopup(true);
+            console.log('Tack för din beställning');
+        };
+    
+    
+
+    
 
 
     return (
         <div className="confirm-page-body">
             <div className="confirm-page-container">
                 <aside className="confirm-aside">
-                    <div className="header">
-                        <div className="underline"></div>
-                    </div>
-                    <div class="confirm-info-frame">
-                        <div class="confirm-info">
+                   
+                    <div className="confirm-info-frame">
+                        <div className="confirm-info">
                             <input type="text" placeholder="Namn" required
                                 className={nameClass}
                                 value={name}
@@ -73,7 +82,7 @@ const ConfirmPage = () => {
                             <p className={nameErrorClass}> {nameErrorMessage} &nbsp; </p>
 
                         </div>
-                        <div class="confirm-info">
+                        <div className="confirm-info">
                             <input type="email" placeholder="E-post"
                                 className={emailClass}
                                 value={email}
@@ -82,7 +91,7 @@ const ConfirmPage = () => {
                             />
                             <p className={emailErrorClass}> {emailErrorMessage} &nbsp; </p>
                         </div>
-                        <div class="confirm-info">
+                        <div className="confirm-info">
                             <input type="telefon" placeholder="Telefonnummer" required
                                 className={telefonClass}
                                 value={telefon}
@@ -91,13 +100,29 @@ const ConfirmPage = () => {
                             />
                             <p className={telefonErrorClass}> {telefonErrorMessage} &nbsp; </p>
                         </div>
-                        <div class="confirm-info">
+                        <div className="confirm-textarea">
                             <textarea placeholder="Ev; meddelande" rows="4"></textarea>
                         </div>
 
-                        <div class="beställ-container">
-                            <Link to="/">Beställ</Link>
-                        </div>
+                        <div>
+                       
+                        <button className="beställ-container" onClick={handleClick}>Beställ</button>
+                         {showPopup && 
+
+                            <div className="popup-overlay">
+                                <div className="popup-content">
+                                    <p className="order-message">Tack för din beställning</p> 
+                                    <Link to='/'>
+                                    <span className="close" onClick={handleClick}>&times;</span>
+                                    </Link>
+                                </div>
+                            </div>}
+
+                           
+           
+                            
+                            </div>
+                       
                     </div>
                 </aside>
                 <article className="confirm-article">

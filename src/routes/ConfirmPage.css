@@ -4,45 +4,37 @@
     align-items: center;
     justify-content: center;
     height: auto;
+    margin: 0;
+    padding: 0;
     background-color: #222222;
 }
-/*
-.order-page-container{
-    display: flex;
-    flex-direction: row;
-    background-color: #222222;
-    
-}
-.order-aside{
-    color: white;
-    padding: 1em;
-    border-radius: 10px;
-    margin: 1em;
-}
-*/
+
 
 .confirm-page-container{
     display: flex;
+    justify-content: center;
     height: auto;
     flex-direction: row;
     background-color: #222222;
+
     
 }
 .confirm-aside{
     padding: 1em;
     border-radius: 10px;
     margin: 1em;
+    display: flex;
+    align-self: center;
 }
 .confirm-article{
     padding: 1em;
     border-radius: 10px;
     margin: 1em; 
-    width: 80%; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-content: center;
+    justify-items: center;
 
 }
 
@@ -59,6 +51,16 @@
     margin: auto;
     width: 440px;
     height: 65px;
+    background: #eaeaea;
+    border-radius: 6px;
+}
+
+
+.confirm-textarea {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 440px;
     background: #eaeaea;
     border-radius: 6px;
 }
@@ -94,7 +96,10 @@
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+    border: none;
+    box-shadow: inset -3px -3px 0px hsla(0, 0%, 0%, 0.298);
 }
+
 
 .confirm-info textarea {
     height: 50px;
@@ -105,18 +110,38 @@
     font-size: 20px;
 }
 
-.popup {
+.popup-overlay {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ccc;
-    z-index: 999;
-    display: none;
-  }
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    color: #222222;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.close {
+    position: relative;
+    top: -4em;
+    right: -10em;
+    cursor: pointer;
+    font-size: 20px;
+    color: #222222;
+}
+
+.order-message {
+    font-size: 20px;
+}
 
 input.valid {
     border-left: 5px solid #1d7f56;
@@ -151,9 +176,55 @@ input.invalid {
   @media (max-width: 780px) {
     .confirm-page-container{
         flex-direction: column;
-        
-        
+        align-items: center;
     }
+
+  
+  
+
+    .confirm-aside{
+        display: flex;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .confirm-textarea {
+        width: 100%;
+    }
+    .confirm-info{
+        width: 100%;
+    }
+
+
+    .confirm-article{
+        padding: 0;
+        margin: 0; 
+        width: 80%; 
+        
+    
+    }
+    .confirm-info input {
+        width: 10em;
+    }
+
+    .confirm-info-frame {
+        width: 80vw;
+        margin: auto;
+    }
+    
+    .close {
+        position: relative;
+        top: -4em;
+        right: -10em;
+        cursor: pointer;
+        font-size: 20px;
+        color: #222222;
+    }
+    
+   
+   
+
 }
 
 
