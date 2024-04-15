@@ -98,8 +98,10 @@ menuItems: [
   deleteOrderedItem: (id) =>
   set((state) => ({
     orderedItems: state.orderedItems.filter((item) => item.id !== id)
+
   })),
 
+  clearItems: () => set({ orderedItems: [] })
 }));
 
 

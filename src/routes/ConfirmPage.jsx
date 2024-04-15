@@ -5,7 +5,10 @@ import { useStore } from '../data/menuItems'
 import { useState } from "react";
 
 const ConfirmPage = () => {
-    const { orderedItems } = useStore((state) => { return { orderedItems: state.orderedItems } })
+	const { orderedItems, clearItems } = useStore((state) => ({
+        orderedItems: state.orderedItems,
+        clearItems: state.clearItems
+    }));
 
     //Validate values
     const [name, setName] = useState('');
@@ -15,16 +18,16 @@ const ConfirmPage = () => {
     const [emailTouched, setEmailTouched] = useState(false);
 
     const [telefon, setTelefon] = useState('');
-    const [telefonTouched, setTelefonlTouched] = useState(false);
+    const [telefonTouched, setTelefonTouched] = useState(false);
 
     const nameIsValid = name.length > 0;
-    const nameErrorMessage = nameIsValid ? '' : 'Vänligen, fyll i ditt namn';
+    const nameErrorMessage = nameIsValid ? '' : 'Vänligen fyll i ditt namn.';
 
     const emailIsValid = email.length > 0 && email.includes('@');
-    const emailErrorMessage = emailIsValid ? '' : 'Vänligen, fyll i din e-postadress';
+    const emailErrorMessage = emailIsValid ? '' : 'Vänligen fyll i din e-postadress.';
 
-    const telefonIsValid = telefon.length > 0 && /^\d+$/.test(telefon);
-    const telefonErrorMessage = telefonIsValid ? '' : 'Vänligen, fyll i din telefonnummer';
+    const telefonIsValid = telefon.length === 10 && /^\d+$/.test(telefon);
+    const telefonErrorMessage = telefonIsValid ? '' : 'Vänligen fyll i din telefonnummer.';
 
     //CSS variables
     let nameErrorClass = 'error ', nameClass = '';
@@ -57,12 +60,12 @@ const ConfirmPage = () => {
         const [showPopup, setShowPopup] = useState(false);
     
         const handleClick = () => {
+			clearItems();
             setShowPopup(true);
-            console.log('Tack för din beställning');
+            
         };
-    
-    
 
+        const checkValidation = nameIsValid && emailIsValid && telefonIsValid
     
 
 
@@ -96,7 +99,7 @@ const ConfirmPage = () => {
                                 className={telefonClass}
                                 value={telefon}
                                 onChange={event => setTelefon(event.target.value)}
-                                onBlur={() => setTelefonlTouched(true)}
+                                onBlur={() => setTelefonTouched(true)}
                             />
                             <p className={telefonErrorClass}> {telefonErrorMessage} &nbsp; </p>
                         </div>
@@ -106,14 +109,14 @@ const ConfirmPage = () => {
 
                         <div>
                        
-                        <button className="beställ-container" onClick={handleClick}>Beställ</button>
+                        <button className="order-button" disabled= {!checkValidation} onClick={handleClick}>Beställ</button>
                          {showPopup && 
 
                             <div className="popup-overlay">
                                 <div className="popup-content">
-                                    <p className="order-message">Tack för din beställning</p> 
+                                    <p className="order-message">Tack för din beställning!</p> 
                                     <Link to='/'>
-                                    <span className="close" onClick={handleClick}>&times;</span>
+                                    <button className="close-button">Tillbaka till startsidan</button>
                                     </Link>
                                 </div>
                             </div>}

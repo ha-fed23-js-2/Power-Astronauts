@@ -14,28 +14,6 @@ function AddFood() {
     const [priceError, setPriceError] = useState(' ')
     const [descriptionError, setDescriptionError] = useState(' ')
 
-    // function handleAdd() {
-    //     checkError()
-    //     if (nameError != '' || imageError != '' || priceError != '' || descriptionError != '') {
-
-    //     }
-    //     else {
-    //         const newFood = {
-    //             name: name,
-    //             image: image,
-    //             price: price,
-    //             description: description
-    //         }
-
-    //         addFood(newFood)
-    //         handleSave()
-    //         setName('')
-    //         setImage('')
-    //         setPrice('')
-    //         setDescription('')
-    //     }
-    // }
-
     useEffect(() => {
         if (nameError === '' && imageError === '' && priceError === '' && descriptionError === ''){
             handleAdd();
@@ -46,7 +24,7 @@ function AddFood() {
         const newFood = {
             name: name,
             image: image,
-            price: price,
+            price: parseInt(price),
             description: description
         }
 
@@ -56,7 +34,10 @@ function AddFood() {
         setImage('')
         setPrice('')
         setDescription('')
-        console.log(menuItems)
+        setNameError(' ')
+        setImageError(' ')
+        setPriceError(' ')
+        setDescriptionError(' ')
     }
 
     function checkName() {
@@ -87,7 +68,7 @@ function AddFood() {
         if (price.length === 0) {
             setPriceError('Vänligen fyll i ett pris.')
         }
-        else if (/[A-Öa-ö]+$/.test(price)) {
+        else if (!(/[0-9]+$/.test(price))) {
             setPriceError('Detta fält kan bara ha siffror i sig.')
         }
         else {
@@ -112,13 +93,6 @@ function AddFood() {
         checkImage()
         checkPrice()
         checkDescription()
-        // if (nameError === '' && imageError === '' && priceError === '' && descriptionError === ''){
-        //     handleAdd()
-        //     console.log(nameError)
-        //     console.log(imageError)
-        //     console.log(priceError)
-        //     console.log(descriptionError)
-        // }
     }
 
     return (
@@ -128,7 +102,7 @@ function AddFood() {
                 <label>Namn:</label>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
                 <p>{nameError}</p>
-                <label>Bild:</label>
+                <label>Bildlänk:</label>
                 <input type="text" value={image} onChange={(e) => setImage(e.target.value)}></input>
                 <p>{imageError}</p>
                 <label>Pris:</label>
@@ -137,7 +111,7 @@ function AddFood() {
                 <label>Beskrivning:</label>
                 <input className="add-description" value={description} type="text" onChange={(e) => setDescription(e.target.value)} />
                 <p>{descriptionError}</p>
-                <button onClick={checkError}>Lägg till</button>
+                <button className='add-new-food-item' onClick={checkError}>Lägg till</button>
             </section>
 
 

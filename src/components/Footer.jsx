@@ -18,7 +18,7 @@ function Footer() {
                 </div>
 
                 <div className="info">
-                    <h3>Öppentider</h3>
+                    <h3>Öppettider</h3>
                     <p>Måndag - Fredag: 17:00 - 21:00</p>
                     <p>Lördag - Söndag: 12:00 - 21:00</p>
                 </div>
