@@ -42,8 +42,8 @@ const OrderPageArticle = () => {
           <div className='total-amount-wraper'>
 
             <p className="total-amount">Totalt: {orderedItems.reduce((total, item) => total + item.price, 0)} kr</p>
-            <Link to="/bekräfta"> {/*Link för att navigera till ConfirmPage*/}
-              <button className="complete">Slutför</button>
+            <Link to="/bekräfta">
+              <button className="complete" disabled={orderedItems.length === 0}>Slutför</button>
             </Link>
 
           </div>

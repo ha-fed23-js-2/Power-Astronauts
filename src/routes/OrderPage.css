@@ -149,10 +149,18 @@
     margin-top: 0.5;
 }
 
-.complete:hover {
+/* Endast hover effect när knappen inte är disabled */
+.complete:not(:disabled):hover {
     background-color: #dad5be;
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
+
+.complete:disabled {
+    background-color: #cccccc; 
+    color: #666666; 
+    cursor: not-allowed; 
+  }
+
 .add-to-cart { 
     background-color: #F0EBD4;
     border: none;
