@@ -28,7 +28,6 @@ async function loadFromApi() {
 	// const data = await response.json();
 	console.log('loadFromApi response ok? ', response.ok);
 	let result = await response.json()
-	console.log('loadFromApi result: ', result);
 	return result
 }
 

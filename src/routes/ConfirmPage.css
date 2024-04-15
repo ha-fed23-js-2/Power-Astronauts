@@ -183,6 +183,20 @@ input.invalid {
 .confirm-info .error.hidden {
 	visibility: hidden;
 }
+
+.close-button{
+    background-color: #924128;
+    color: #F0EBD4;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 0px #0000004c;
+    transition: transform 0.3s ease; 
+	width: 10em;
+	margin-top: 1em;
+}
   
 
   @media (max-width: 780px) {

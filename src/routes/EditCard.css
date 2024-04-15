@@ -23,7 +23,7 @@
 	box-shadow: 0 0 0;
 }
 
-.edit-btn, .delete-btn{
+.edit-btn, .delete-btn, .add-btn{
 	border: none;
 	background: none;
 	width: 20px;

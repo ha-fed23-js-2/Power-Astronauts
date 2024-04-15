@@ -18,16 +18,16 @@ const ConfirmPage = () => {
     const [emailTouched, setEmailTouched] = useState(false);
 
     const [telefon, setTelefon] = useState('');
-    const [telefonTouched, setTelefonlTouched] = useState(false);
+    const [telefonTouched, setTelefonTouched] = useState(false);
 
     const nameIsValid = name.length > 0;
-    const nameErrorMessage = nameIsValid ? '' : 'Vänligen, fyll i ditt namn';
+    const nameErrorMessage = nameIsValid ? '' : 'Vänligen fyll i ditt namn.';
 
     const emailIsValid = email.length > 0 && email.includes('@');
-    const emailErrorMessage = emailIsValid ? '' : 'Vänligen, fyll i din e-postadress';
+    const emailErrorMessage = emailIsValid ? '' : 'Vänligen fyll i din e-postadress.';
 
-    const telefonIsValid = telefon.length > 0 && /^\d+$/.test(telefon);
-    const telefonErrorMessage = telefonIsValid ? '' : 'Vänligen, fyll i din telefonnummer';
+    const telefonIsValid = telefon.length === 10 && /^\d+$/.test(telefon);
+    const telefonErrorMessage = telefonIsValid ? '' : 'Vänligen fyll i din telefonnummer.';
 
     //CSS variables
     let nameErrorClass = 'error ', nameClass = '';
@@ -99,7 +99,7 @@ const ConfirmPage = () => {
                                 className={telefonClass}
                                 value={telefon}
                                 onChange={event => setTelefon(event.target.value)}
-                                onBlur={() => setTelefonlTouched(true)}
+                                onBlur={() => setTelefonTouched(true)}
                             />
                             <p className={telefonErrorClass}> {telefonErrorMessage} &nbsp; </p>
                         </div>
@@ -114,9 +114,9 @@ const ConfirmPage = () => {
 
                             <div className="popup-overlay">
                                 <div className="popup-content">
-                                    <p className="order-message">Tack för din beställning</p> 
+                                    <p className="order-message">Tack för din beställning!</p> 
                                     <Link to='/'>
-                                    <span className="close" onClick={handleClick}>&times;</span>
+                                    <button className="close-button">Tillbaka till hemsidan</button>
                                     </Link>
                                 </div>
                             </div>}

@@ -10,29 +10,22 @@ const LandingPage = () => {
 
     return (
         <>
-         <div className="frontPic-container">
-         <img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
+            <div className="frontPic-container">
+                <img className="frontPic" src={LandingImg} alt="Bild på en tallrik köttbullar och potatismos" />
 
-        </div>
+            </div>
+            <div className="outer-container">
+                <div className="menu-frame-container">
+                    <div className="menu-frame">
+                        <LandingPageCard />
+                    </div>
 
-      
-  
-		
-	
-        
+                </div>
 
-       <div className="outer-container">
-        <div className="menu-frame-container">
-        <div className="menu-frame">
-    <LandingPageCard />
-    </div>
 
-        </div>
-		
-   
-	<img className="loggaHeaderLower" src={Logga} alt="Karlssons husmanskost logga" />
-	  </div>
-	  
+                <img className="loggaHeaderLower" src={Logga} alt="Karlssons husmanskost logga" />
+            </div>
+
         </>
     );
 }

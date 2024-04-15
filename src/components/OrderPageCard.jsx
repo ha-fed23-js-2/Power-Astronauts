@@ -14,7 +14,6 @@ const OrderPageCard = () => {
 
   function orderItem(item) {
     addOrderedItem(item)
-    console.log('Lista:', orderedItems)
   }
 
 
