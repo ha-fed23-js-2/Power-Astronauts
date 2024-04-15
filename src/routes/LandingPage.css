@@ -89,6 +89,7 @@ h1{
     color: white;
 	font-size: 18px;
     margin: 0.5em;
+    margin-left: 0;
     font-family: "monospace", sans-serif;
     font-weight: lighter;
 }
