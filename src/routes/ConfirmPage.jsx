@@ -5,7 +5,10 @@ import { useStore } from '../data/menuItems'
 import { useState } from "react";
 
 const ConfirmPage = () => {
-    const { orderedItems } = useStore((state) => { return { orderedItems: state.orderedItems } })
+	const { orderedItems, clearItems } = useStore((state) => ({
+        orderedItems: state.orderedItems,
+        clearItems: state.clearItems
+    }));
 
     //Validate values
     const [name, setName] = useState('');
@@ -57,8 +60,9 @@ const ConfirmPage = () => {
         const [showPopup, setShowPopup] = useState(false);
     
         const handleClick = () => {
+			clearItems();
             setShowPopup(true);
-            console.log('Tack för din beställning');
+            
         };
     
     
