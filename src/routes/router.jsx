@@ -28,7 +28,7 @@ const router = createHashRouter([
 				element: <OrderPage />
 			},
 			{
-				path: '/bekräfta',
+				path: '/Bekräfta',
 				element: <ConfirmPage />
 			},
 			{
