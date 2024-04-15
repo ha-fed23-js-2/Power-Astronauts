@@ -47,7 +47,7 @@
     padding: 0.5rem;
     border-radius: 0 0 10px 10px ;
     padding-top: 1em;
-	max-width: 500px;
+	max-width: 516px;
     
 }
 
@@ -107,10 +107,14 @@
 .product-wrapper{
     display: flex;
     flex-direction: column;
+    font-family: "monospace", sans-serif;
+
 }
 
 .product-wrapper h2{
-    font-family: 'Dancing Script', Handwriting;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+
 }
 
 
@@ -198,11 +202,13 @@
 }
 
 .selected-product-container p {
-    margin: 5px
+    margin: 5px;
+    font-family: 'monospace', sans-serif;
 }
 .selected-product-container h3 {
     margin: 5px;
-    font-family: 'Delius Swash Caps', swap;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
 }
 .counter-wrapper {
     display: flex;
@@ -245,6 +251,8 @@
     background-color: #924128;
     text-align: center;
 	max-width: 500px;
+    font-family: "Bebas Neue", sans-serif;
+
 }
 
 .cart-delete-btn{
@@ -317,12 +325,13 @@
 @media (max-width: 668px) {
     
    
-    h2{
-        font-size: 15px;
+    .product-container h2{
+        font-size: 20px;
+        margin-top: 0.5em;
         
     }
-    p{
-        font-size: 12px;
+    .product-container p{
+        font-size: 16px;
     }
 
 

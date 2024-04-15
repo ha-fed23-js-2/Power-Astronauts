@@ -80,15 +80,17 @@ h1{
 .landing-card > h2{
 	font-size: 30px;
     color: white;
-    font-family: 'Dancing Script', Handwriting;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
     margin: 0;
 }
 
 .landing-card > p{
     color: white;
 	font-size: 18px;
-    font-family: 'Alice';
     margin: 0.5em;
+    font-family: "monospace", sans-serif;
+    font-weight: lighter;
 }
 
 

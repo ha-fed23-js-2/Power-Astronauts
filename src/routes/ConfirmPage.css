@@ -81,7 +81,7 @@
 
 }
 
-.beställ-container {
+.order-button {
     display: flex;
     justify-content: center;
     margin: 60px auto;
@@ -98,6 +98,17 @@
     cursor: pointer;
     border: none;
     box-shadow: inset -3px -3px 0px hsla(0, 0%, 0%, 0.298);
+}
+
+.order-button:disabled {
+    background-color: #cccccc; 
+    color: #666666; 
+    cursor: not-allowed; 
+}
+
+.order-button:not(:disabled):hover {
+    background-color: #7a331e;
+    transform: scale(1.05);
 }
 
 

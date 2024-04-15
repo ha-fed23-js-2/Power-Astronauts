@@ -137,7 +137,7 @@ function AddFood() {
                 <label>Beskrivning:</label>
                 <input className="add-description" value={description} type="text" onChange={(e) => setDescription(e.target.value)} />
                 <p>{descriptionError}</p>
-                <button onClick={checkError}>Lägg till</button>
+                <button className='add-new-food-item' onClick={checkError}>Lägg till</button>
             </section>
 
 

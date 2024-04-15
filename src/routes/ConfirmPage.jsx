@@ -64,9 +64,8 @@ const ConfirmPage = () => {
             setShowPopup(true);
             
         };
-    
-    
 
+        const checkValidation = nameIsValid && emailIsValid && telefonIsValid
     
 
 
@@ -110,7 +109,7 @@ const ConfirmPage = () => {
 
                         <div>
                        
-                        <button className="beställ-container" onClick={handleClick}>Beställ</button>
+                        <button className="order-button" disabled= {!checkValidation} onClick={handleClick}>Beställ</button>
                          {showPopup && 
 
                             <div className="popup-overlay">
