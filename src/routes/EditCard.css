@@ -2,11 +2,10 @@
 
 .order-card{
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	border: 1.5px solid #f0ebd485;
 	width: 100%; 
-    max-width: 650px;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -46,7 +45,8 @@
 	flex-direction: row;
 	justify-content: center; 
 	align-items: center; 
-	position: relative; 
+	position: relative;
+	margin-left: 1em;
   }
 
 .action-btns {

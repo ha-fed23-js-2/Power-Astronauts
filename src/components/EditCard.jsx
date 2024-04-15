@@ -33,6 +33,10 @@ export default function EditCard({ item }) {
         updateItem(updatedItem)
         setEditMode(false)
         handleSave()
+        setNameError(' ')
+        setImageError(' ')
+        setPriceError(' ')
+        setDescriptionError(' ')
     }
 
     function toggleEdit(){
@@ -99,13 +103,13 @@ export default function EditCard({ item }) {
     return <div> {editMode === true ?
         <div className="order-card">
             <div className="edit-food-item">
-            <input className="edit-name" defaultValue={item.name} onChange={(e) => setName(e.target.value)}></input>
+            <input className="edit-name" defaultValue={item.name} value={name} onChange={(e) => setName(e.target.value)}></input>
             <p>{nameError}</p>
-            <input className="edit-image" defaultValue={item.image} onChange={(e) => setImage(e.target.value)}></input>
+            <input className="edit-image" defaultValue={item.image} value={image} onChange={(e) => setImage(e.target.value)}></input>
             <p>{imageError}</p>
-            <input className="edit-price" defaultValue={item.price} onChange={(e) => setPrice(e.target.value)}></input>
+            <input className="edit-price" defaultValue={item.price} value={price} onChange={(e) => setPrice(e.target.value)}></input>
             <p>{priceError}</p>
-            <input className="edit-description" defaultValue={item.description} onChange={(e) => setDescription(e.target.value)}></input>
+            <input className="edit-description" defaultValue={item.description} value={description} onChange={(e) => setDescription(e.target.value)}></input>
             <p>{descriptionError}</p>
             <div className="button-div"><button className="cancel-btn" onClick={toggleEdit}>Tillbaka</button>
             <button className="save-button" onClick={checkError}>Spara</button>

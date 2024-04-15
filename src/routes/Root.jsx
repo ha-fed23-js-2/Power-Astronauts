@@ -19,7 +19,7 @@ const Root = () => {
 
 		<div className="header-row">
 		    <NavLink to="/Beställ" className="header-options">BESTÄLL</NavLink>
-			<img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" />
+			<NavLink to="/"><img className="loggaHeader" src={Logga} alt="Karlssons husmanskost logga" /></NavLink>
 			<NavLink to="/" className="header-options">MENY</NavLink>
             </div>
 		</header>

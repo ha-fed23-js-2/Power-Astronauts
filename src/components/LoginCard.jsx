@@ -138,7 +138,7 @@ const LoginCard = () => {
                     </div>
                     <div className="input">
                         <div className="input">
-                            <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+                            <input type="password" placeholder="Lösenord" onChange={(event) => setPassword(event.target.value)} />
                             <p className="password-error">{errorMessage}</p>
                         </div>
                     </div>
