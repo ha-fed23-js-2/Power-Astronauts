@@ -73,7 +73,7 @@ export default function EditCard({ item }) {
         if (price.length === 0) {
             setPriceError('Vänligen fyll i ett pris.')
         }
-        else if (/[A-Öa-ö]+$/.test(price)) {
+        else if (!(/[0-9]+$/.test(price))) {
             setPriceError('Detta fält kan bara ha siffror i sig.')
         }
         else {

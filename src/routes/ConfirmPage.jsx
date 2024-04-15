@@ -116,7 +116,7 @@ const ConfirmPage = () => {
                                 <div className="popup-content">
                                     <p className="order-message">Tack för din beställning!</p> 
                                     <Link to='/'>
-                                    <button className="close-button">Tillbaka till hemsidan</button>
+                                    <button className="close-button">Tillbaka till startsidan</button>
                                     </Link>
                                 </div>
                             </div>}
