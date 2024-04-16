@@ -1,19 +1,15 @@
-/* img{
-    max-width: 250px;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s;
-} */
 
-/* Importera Google Font i din CSS-fil */
-@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
 
 
 
 .outer-container{
-	background-image: url('../assets/moln.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #924128 ;
 	z-index: 1;
 }
 
